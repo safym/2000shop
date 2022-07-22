@@ -1,0 +1,36 @@
+.myButton {
+  width: 90%;
+  height: 50px;
+
+  border-radius: 20px;
+
+  border: none;
+  color: #ae7cd8;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 20px 0px 0px 0px;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  background-color: rgb(34, 34, 34);
+}
+
+.myButton:focus {
+  outline: none;
+}
+
+.myButton:hover {
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+
+.myButton:disabled,
+.myButton:disabled:hover,
+.myButton[disabled],
+.myButton[disabled]:hover {
+  border: none;
+  background-color: #c695ee;
+  color: #666666;
+}

@@ -1,0 +1,55 @@
+.AboutProfile * {
+    color: #ae7cd8;
+}
+
+.AboutProfile {
+    width: 1000px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.UserInfo {
+    display: flex;
+    flex-direction: column;
+
+    margin: 50px;
+}
+
+.AboutProfile img {
+    width: 200px;
+    height: 200px;
+
+    margin: 50px;
+
+    border-radius: 100px;
+
+    background-color: #3b2949;
+}
+
+.Profile {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+}
+
+.NewPost {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #ae7cd8;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.publish {
+    display: flex;
+
+    float: right;
+
+    width: 100%;
+}

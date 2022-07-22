@@ -1,0 +1,40 @@
+.Card * {
+    color:#000000 ;
+    font-size: 150px;
+    font-family: "wintermute", monospace;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    
+    margin-top: 5%;
+    padding: 50px;
+    border-radius: 30px;
+    border: 3px solid #000000;
+
+    background-image: url(../img/pic/pinkphones.jpg);
+    background-size: 100%;
+}
+
+.Card h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.Article {
+    margin-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    text-align: center;
+}
+
+.text {
+    font-size: 30px;
+}
+

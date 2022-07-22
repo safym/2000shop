@@ -1,0 +1,18 @@
+.Content {
+    color: rgb(0, 0, 0);
+    margin-top: 65px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.WrapperContent {
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.metadata {
+    margin-bottom: 0;
+    color: rgb(110, 110, 110);
+}

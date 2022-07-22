@@ -1,0 +1,30 @@
+.styledInput {
+    width: 90%;
+    
+    margin: 10px 0px 5px 0px;
+    padding: 15px;
+
+    font-size: 20px;
+    letter-spacing: 1px;
+    
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+
+    transition-duration: 0.1s;
+    transition-property: color;
+}
+
+#login,
+#password,
+#TitleNewPost {
+    height: 50px;
+}
+
+.styledInput::placeholder {
+    color: #333333;
+}
+
+.styledInput:focus {
+    outline: 2px solid #844db1;
+}
