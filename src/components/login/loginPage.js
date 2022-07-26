@@ -14,6 +14,8 @@ const LoginPage = (props) => {
 
   return (
     <div className="login">
+
+      <h1 className="loginLabel">Hello!</h1>
       <ComponentsLogin callback={props.callback} />
     </div>
   );

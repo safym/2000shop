@@ -14,7 +14,8 @@
   src: url(../fonts/nk57-monospace-cd-bk.ttf) format("truetype");
 }
 
-.Content * {
+.Content *,
+.login * {
   font-family: "monospace", monospace;
 }
 

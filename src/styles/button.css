@@ -2,19 +2,21 @@
   width: 90%;
   height: 50px;
 
-  border-radius: 20px;
-
   border: none;
-  color: #ae7cd8;
+  color: #ffffff;
 
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
   margin: 20px 0px 0px 0px;
-  transition-duration: 0.1s;
   cursor: pointer;
   background-color: rgb(34, 34, 34);
+
+  transition: all 0.3s ease-in-out;
+  
+  border: 2px solid rgb(0, 0, 0);
+
 }
 
 .myButton:focus {

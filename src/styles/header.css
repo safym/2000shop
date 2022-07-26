@@ -14,7 +14,6 @@
   z-index: 999px;
 }
 
-#button_logo,
 .header_button {
   color: white;
   font-size: 30px;
@@ -30,17 +29,6 @@
 #buttonSignIn,
 #buttonSignOut {
   border-radius: 20px;
-  border: 3px dotted greenyellow;
-}
-
-.buttons_nav {
-  /* float: right; */
-}
-
-#logoLink {
-  /* float: left; */
-
-  margin: 0;
 }
 
 .header_button:hover {
