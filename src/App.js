@@ -9,6 +9,7 @@ import Login from "./components/login/loginPage";
 import "./styles/App.css";
 import "./styles/header.css";
 import "./styles/content.css";
+import "./styles/catalog.css";
 import "./styles/home.css";
 import "./styles/login.css";
 import "./styles/profile.css";
@@ -40,7 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={ <Navigate to="/home"/> } />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/news" element={<Catalog />} />
+            <Route path="/catalog" element={<Catalog />} />
             <Route path="/profile" element={<Profile auth={authorized}/>} />
             <Route path="/login" element={<Login auth={authorized} callback={authorizedCallback}/>} />
           </Routes>

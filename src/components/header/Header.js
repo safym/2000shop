@@ -10,7 +10,7 @@ const Header = (props) => {
       <LogoLink />
       <nav className="buttons_nav">
         
-        <HeaderLink name="Catalog" href="/news" visible={true} />
+        <HeaderLink name="Catalog" href="/catalog" visible={true} />
         <HeaderLink name="Profile" href="/profile" visible={props.auth} />
         <BtnSignIn name="Sign in" href="/login" visible={!props.auth} />
         <BtnSignOut name="Sign out" href="/home" callback={props.callback} visible={props.auth} />

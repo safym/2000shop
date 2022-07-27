@@ -1,7 +1,12 @@
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
+const cors = require("cors");
 const PORT = 3001;
 const app = express();
+
+app.use(cors(
+  {origin:"*"}
+));
 
 const db = new sqlite3.Database(__dirname + '/main.sqlite', (err) => {
     if (err) {

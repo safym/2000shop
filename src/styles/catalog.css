@@ -1,0 +1,21 @@
+.catalog {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.phoneItem {
+    border-radius: 15px;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+    width: 250px;
+
+    box-shadow: rgba(203, 3, 214, 0.3) 0px 0px 0px 3px;
+}

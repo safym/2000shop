@@ -1,13 +1,46 @@
+//import modules
+import React, {useState, useEffect } from 'react';
+
 const Catalog = () => {
   return (
-    <div className="catalog">
-      <PhoneItem />
-    </div>
+      <PhoneItems />
   );
 };
 
-const PhoneItem = () => {
-  
+const PhoneItems = () => {
+  const [error, setError] = useState(null);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/api/products")
+      .then(
+        res => res.json())
+      .then(
+        (result) => {
+          setItems(result.message.result);
+          console.log(result.message.result);
+        },
+        (error) => {
+          setError(error);
+        }
+      )
+  }, [])
+
+  if (error) {
+    return <div>Ошибка: {error.message}</div>;
+  } else {
+    return (
+      <div className="catalog">
+          {items.map(data => (
+            <div className="phoneItem" key={"item" + data.ID}>
+              <h1 className="itemName" key={"itemName" + data.ID}> {data.Name} </h1>
+              <h2 className="itemPrice" key={"itemPrice" + data.ID}> {data.Price}$ </h2>
+              <h2 className="itemYear" key={"itemYear" + data.ID}> {data.Announced} </h2>
+            </div>
+          ))}
+      </div>
+    );
+  }
 };
 
 export default Catalog;
