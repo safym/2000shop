@@ -5,18 +5,14 @@
   border: none;
   color: #ffffff;
 
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin: 20px 0px 0px 0px;
+
+  margin-bottom: 20px;
   cursor: pointer;
   background-color: rgb(34, 34, 34);
 
   transition: all 0.3s ease-in-out;
-  
-  border: 2px solid rgb(0, 0, 0);
-
 }
 
 .myButton:focus {
@@ -25,7 +21,6 @@
 
 .myButton:hover {
   background-color: rgb(53, 53, 53);
-  color: white;
 }
 
 .myButton:disabled,
