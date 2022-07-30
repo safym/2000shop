@@ -2,14 +2,19 @@
 import React, { useState, useEffect } from "react";
 
 // import icons
-import {FaShoppingCart} from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Catalog = () => {
   let [cart, setCart] = useState([]);
   let [cartOpen, setCartOpen] = useState(false);
 
   const addToCart = (item) => {
-    setCart([...cart, item.data])
+    setCart([...cart, item.data]);
+
+    var currentCart = JSON.parse(localStorage.getItem("cart"))
+
+    currentCart.push(item.data);
+    localStorage.setItem("cart", JSON.stringify(currentCart));
   };
 
   const openCart = () => {
@@ -20,8 +25,6 @@ const Catalog = () => {
   return (
     <div className="Content">
       <PhoneItems callback={addToCart} />
-      <Cart items={cart} cartOpen={cartOpen}/>
-      <ButtonCart className="OpenCart" cart={cart} callback={openCart}/>
     </div>
   );
 };
@@ -63,7 +66,7 @@ const PhoneItems = (props) => {
             <h2 className="itemPrice" key={"itemPrice" + data.ID}>
               {data.Price + " "}$
             </h2>
-            <button className="myButton" type="submit" onClick={() => props.callback({data})}>
+            <button className="myButton" type="submit" onClick={() => props.callback({ data })}>
               Add to cart
             </button>
           </div>
@@ -72,36 +75,5 @@ const PhoneItems = (props) => {
     );
   }
 };
-
-const Cart = (props) => {
-  console.log(props.cartOpen);
-  if (props.cartOpen) {
-  return (
-    <div className="cart">
-      {props.items.map((data) => (
-        <p className="cartItem" key={"item" + data.ID}>
-         {data.Name}
-        </p>
-      ))}
-      <button className="myButton" type="submit">
-              Order
-      </button>
-    </div>
-  );
-  }
-}
-
-const ButtonCart = (props) => {
-  console.log(props.cart.length);
-  if (props.cart.length) {
-    return (
-      <button className="openCart" onClick={props.callback}>
-        Cart
-        <FaShoppingCart />
-      </button>
-    );
-  }
-
-}
 
 export default Catalog;

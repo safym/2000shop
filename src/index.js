@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-if (!localStorage.getItem('news')) {
-  localStorage.setItem('news', JSON.stringify([]));
-  console.log(JSON.parse(localStorage.getItem('news')));
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify([]));
+  console.log(JSON.parse(localStorage.getItem('cart')));
 }
 
 root.render(

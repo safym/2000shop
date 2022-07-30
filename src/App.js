@@ -4,6 +4,7 @@ import Catalog from "./components/content/Catalog";
 import HomePage from "./components/home/home";
 import Profile from "./components/profile/profile";
 import Login from "./components/login/loginPage";
+import Cart from "./components/cart/cart";
 
 // import styles
 import "./styles/App.css";
@@ -15,6 +16,7 @@ import "./styles/login.css";
 import "./styles/profile.css";
 import "./styles/input.css";
 import "./styles/button.css";
+import "./styles/cart.css";
 
 // import modules
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -44,6 +46,7 @@ function App() {
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/profile" element={<Profile auth={authorized}/>} />
             <Route path="/login" element={<Login auth={authorized} callback={authorizedCallback}/>} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
       </div>

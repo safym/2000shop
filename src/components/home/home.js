@@ -9,7 +9,7 @@ const HomePage = () => {
         <Article />
       </div>
       <div className="TextWrap">
-       <TextAbout />
+        <TextAbout />
       </div>
     </div>
   );

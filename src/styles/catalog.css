@@ -16,7 +16,7 @@
     align-items: center;
 
     margin: 1%;
-    padding: 5px;
+    padding: 25px;
 
     width: 350px;
 
@@ -55,54 +55,4 @@
 
 .phoneItem:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 24px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
-}
-
-.openCart {
-    width: 120px;
-    height: 60px;
-
-    padding: 10px;
-
-    position: fixed;
-    left: 87%;
-    top: 15%;
-
-    border: none;
-    color: #ffffff;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-
-    cursor: pointer;
-    background-color: rgb(34, 34, 34);
-
-    transition: all 0.3s ease-in-out;
-    border-radius: 50px;
-}
-
-.openCart:hover {
-    background-color: rgb(53, 53, 53);
-  }
-
-
-.cart {
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 300px;
-    font-size: 30px;
-    padding: 5px;
-
-    position: fixed;
-    left: 81%;
-    top: 25%;
-
-    border-radius: 5px;
-    background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
