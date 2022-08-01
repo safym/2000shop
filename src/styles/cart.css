@@ -33,6 +33,10 @@
     width: 60%;
 }
 
+.cartItemQuantity {
+    color:gray;
+}
+
 .deleteCartItem {
     display: flex;
     justify-content: center;

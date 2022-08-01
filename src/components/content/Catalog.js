@@ -1,26 +1,46 @@
 //import modules
 import React, { useState, useEffect } from "react";
 
-// import icons
-import { FaShoppingCart } from "react-icons/fa";
-
 const Catalog = () => {
-  let [cart, setCart] = useState([]);
-  let [cartOpen, setCartOpen] = useState(false);
+  var currentCart = JSON.parse(localStorage.getItem("cart"));
+  var [cart, setCart] = useState(currentCart);
 
   const addToCart = (item) => {
-    setCart([...cart, item.data]);
+    var newItem = item.data;
 
-    var currentCart = JSON.parse(localStorage.getItem("cart"))
+    const checkExistItem = (newItem) => {
+      var result = false;
+      cart.map((item) => {
+        console.log("check");
+        console.log(item.ID);
+        console.log(newItem.ID);
 
-    currentCart.push(item.data);
-    localStorage.setItem("cart", JSON.stringify(currentCart));
+        if (item.ID == newItem.ID) {
+          console.log("check YES");
+          result = true;
+        }
+      });
+      return result;
+    };
+
+    if (checkExistItem(newItem)) {
+      const newStateCart = cart.map((item) => {
+        if (item.ID === newItem.ID) {
+          var newQuentity = item.Quantity + 1;
+          var newPrice = item.Price + newItem.Price;
+          return { ...item, Quantity: newQuentity, Price: newPrice};
+        }
+
+        return item;
+      });
+      setCart(newStateCart);
+      localStorage.setItem("cart", JSON.stringify(newStateCart));
+    } else {
+      newItem.Quantity = 1;
+      currentCart.push(newItem);
+      localStorage.setItem("cart", JSON.stringify(currentCart));
+    }
   };
-
-  const openCart = () => {
-    setCartOpen(true)
-  };
-
 
   return (
     <div className="Content">
@@ -66,7 +86,11 @@ const PhoneItems = (props) => {
             <h2 className="itemPrice" key={"itemPrice" + data.ID}>
               {data.Price + " "}$
             </h2>
-            <button className="myButton" type="submit" onClick={() => props.callback({ data })}>
+            <button
+              className="myButton"
+              type="submit"
+              onClick={() => props.callback({ data })}
+            >
               Add to cart
             </button>
           </div>

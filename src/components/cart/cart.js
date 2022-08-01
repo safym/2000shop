@@ -22,8 +22,6 @@ const Cart = () => {
       return currentCartItem.ID !== Math.floor(selectedID);
     });
 
-    // console.log(cart)
-    // console.log(finalCart);
     setCart(finalCart);
     localStorage.setItem("cart", JSON.stringify(finalCart));
   };
@@ -40,7 +38,8 @@ const Cart = () => {
           src={require("../../img/catalog/" + currentCart[i].Image)}
         />
         <h1 className="cartItemName">{currentCart[i].Name}</h1>
-        <h1 className="cartItemPtice">{currentCart[i].Price} $</h1>
+        <h1 className="cartItemQuantity">×{currentCart[i].Quantity}</h1>
+        <h1 className="cartItemPrice">{currentCart[i].Price} $</h1>
         <button
           className="deleteCartItem"
           id={"delete_CartItem" + currentCart[i].ID}
