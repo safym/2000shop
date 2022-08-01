@@ -2,32 +2,50 @@
   width: 90%;
   height: 50px;
 
-  border: none;
-  color: #ffffff;
-
   display: inline-block;
+
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+
+
   font-size: 20px;
 
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: rgb(34, 34, 34);
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
 
-  transition: all 0.3s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+
+  vertical-align: middle;
 }
 
 .myButton:focus {
-  outline: none;
+  text-decoration: none;
 }
 
 .myButton:hover {
-  background-color: rgb(53, 53, 53);
+  text-decoration: none;
 }
 
-.myButton:disabled,
-.myButton:disabled:hover,
-.myButton[disabled],
-.myButton[disabled]:hover {
-  border: none;
-  background-color: #c695ee;
-  color: #666666;
+.myButton:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
 }
+
+.myButton:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+ 
