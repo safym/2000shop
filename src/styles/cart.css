@@ -69,3 +69,9 @@
     margin: 0;
     width: 70%;
 }
+
+.cartInfoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

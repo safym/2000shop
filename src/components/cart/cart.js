@@ -1,57 +1,67 @@
-import { RiCloseLine } from "react-icons/ri"
+//import modules
+import React, { useState, useEffect } from "react";
+
+// import components
+import CartFooter from "./cartFooter";
 
 const Cart = () => {
-    var currentCart = JSON.parse(localStorage.getItem("cart"));
-    var finalCart = [];
-    var totalCoast = 0;
+  var currentCart = JSON.parse(localStorage.getItem("cart"));
 
-    var deleteCartItem = () => {
-        console.log(currentCart);
+  let [cart, setCart] = useState(currentCart);
 
-        for (var i = currentCart.length - 1; i >= 0; i--) {
-            // TO DO delete selected item
-        }
-    }
+  var finalCart = [];
+  var totalCoast = 0;
 
-    for (var i = currentCart.length - 1; i >= 0; i--) {
-        finalCart.push(
-            <div key={currentCart[i].title} className="cartItem" id={"cartItem" +  currentCart[i].ID}>
-                <img
-                    className="cartItemImage"
-                    src={require("../../img/catalog/" + currentCart[i].Image)}
-                />
-                <h1 className="cartItemName">{currentCart[i].Name}</h1>
-                <h1 className="cartItemPtice">{currentCart[i].Price} $</h1>
-                <button 
-                    className="deleteCartItem" 
-                    id={"delete_CartItem" + currentCart[i].ID}
-                    onClick={deleteCartItem}>
-                    <RiCloseLine />
-                </button>
-            </div>
-        )
-        finalCart.push(<hr className="cartBorderline"/>)
+  var deleteCartItem = (event) => {
+    console.log(event);
+    var selectedID = event.target.id.replace("delete_CartItem", "");
 
-        totalCoast = totalCoast + currentCart[i].Price;
-    }
-    return (
-        <div className="Content">
-            <div className="cartItems">
-                {finalCart}
-                <CartFooter totalCoast={totalCoast}/>
-            </div>
-        </div>
+    finalCart = cart.filter(function (currentCartItem) {
+      console.log(currentCartItem.ID);
+      console.log(selectedID);
+      return currentCartItem.ID !== Math.floor(selectedID);
+    });
 
+    // console.log(cart)
+    // console.log(finalCart);
+    setCart(finalCart);
+    localStorage.setItem("cart", JSON.stringify(finalCart));
+  };
+
+  for (var i = currentCart.length - 1; i >= 0; i--) {
+    finalCart.push(
+      <div
+        key={currentCart[i].title}
+        className="cartItem"
+        id={"cartItem" + currentCart[i].ID}
+      >
+        <img
+          className="cartItemImage"
+          src={require("../../img/catalog/" + currentCart[i].Image)}
+        />
+        <h1 className="cartItemName">{currentCart[i].Name}</h1>
+        <h1 className="cartItemPtice">{currentCart[i].Price} $</h1>
+        <button
+          className="deleteCartItem"
+          id={"delete_CartItem" + currentCart[i].ID}
+          onClick={deleteCartItem}
+        >
+          ×
+        </button>
+      </div>
     );
-};
+    finalCart.push(<hr className="cartBorderline" />);
 
-const CartFooter = (props) => {
-    return(
-        <div className="cartFooter">
-            <h1 className="cartTotal">Total: {props.totalCoast} $</h1>
-            <button className="myButton">Checkout ></button>
-        </div>
-    )
-}
+    totalCoast = totalCoast + currentCart[i].Price;
+  }
+  return (
+    <div className="Content">
+      <div className="cartItems">
+        {finalCart}
+        <CartFooter totalCoast={totalCoast} />
+      </div>
+    </div>
+  );
+};
 
 export default Cart;
