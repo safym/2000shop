@@ -35,20 +35,24 @@ const Cart = () => {
         className="cartItem"
         id={"cartItem" + currentCart[i].ID}
       >
-        <img
-          className="cartItemImage"
-          src={require("../../img/catalog/" + currentCart[i].Image)}
-        />
-        <h1 className="cartItemName">{currentCart[i].Name}</h1>
-        <h1 className="cartItemQuantity">×{currentCart[i].Quantity}</h1>
-        <h1 className="cartItemPrice">{currentCart[i].Price} $</h1>
-        <button
-          className="deleteCartItem"
-          id={"delete_CartItem" + currentCart[i].ID}
-          onClick={deleteCartItem}
-        >
-          ×
-        </button>
+        <div className="itemSectionGeneral">
+          <img
+            className="cartItemImage"
+            src={require("../../img/catalog/" + currentCart[i].Image)}
+          />
+          <h1 className="cartItemName">{currentCart[i].Name}</h1>
+        </div>
+        <div className="itemSectionInfo">
+          <h1 className="cartItemQuantity">×{currentCart[i].Quantity}</h1>
+          <h1 className="cartItemPrice">{currentCart[i].Price} $</h1>
+          <button
+            className="deleteCartItem"
+            id={"delete_CartItem" + currentCart[i].ID}
+            onClick={deleteCartItem}
+          >
+            ×
+          </button>
+        </div>
       </div>
     );
     finalCart.push(<hr className="cartBorderline" />);
