@@ -12,6 +12,8 @@ const Cart = () => {
   var finalCart = [];
   var totalCoast = 0;
 
+  console.log(currentCart);
+
   var deleteCartItem = (event) => {
     console.log(event);
     var selectedID = event.target.id.replace("delete_CartItem", "");

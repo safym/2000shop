@@ -5,17 +5,18 @@ const Catalog = () => {
   var currentCart = JSON.parse(localStorage.getItem("cart"));
   var [cart, setCart] = useState(currentCart);
 
-  const addToCart = (item) => {
-    var newItem = item.data;
+  const addToCart = (newItem) => {
+    var newItemData = newItem.data;
 
-    const checkExistItem = (newItem) => {
+    const checkExistItem = (newItemData) => {
       var result = false;
       cart.map((item) => {
         console.log("check");
-        console.log(item.ID);
-        console.log(newItem.ID);
+        console.log(cart)
+        console.log(item);
+        console.log(newItemData);
 
-        if (item.ID == newItem.ID) {
+        if (item.ID == newItemData.ID) {
           console.log("check YES");
           result = true;
         }
@@ -23,11 +24,11 @@ const Catalog = () => {
       return result;
     };
 
-    if (checkExistItem(newItem)) {
+    if (checkExistItem(newItemData)) {
       const newStateCart = cart.map((item) => {
-        if (item.ID === newItem.ID) {
+        if (item.ID === newItemData.ID) {
           var newQuentity = item.Quantity + 1;
-          var newPrice = item.Price + newItem.Price;
+          var newPrice = item.Price + newItemData.Price;
           return { ...item, Quantity: newQuentity, Price: newPrice};
         }
 
@@ -36,8 +37,9 @@ const Catalog = () => {
       setCart(newStateCart);
       localStorage.setItem("cart", JSON.stringify(newStateCart));
     } else {
-      newItem.Quantity = 1;
-      currentCart.push(newItem);
+      newItemData.Quantity = 1;
+      currentCart.push(newItemData);
+      setCart(currentCart);
       localStorage.setItem("cart", JSON.stringify(currentCart));
     }
   };
