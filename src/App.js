@@ -1,6 +1,7 @@
 // import components
 import Header from "./components/header/Header";
 import Catalog from "./components/content/Catalog";
+import ItemPage from "./components/content/ItemPage";
 import HomePage from "./components/home/home";
 import Profile from "./components/profile/profile";
 import Login from "./components/login/loginPage";
@@ -47,6 +48,7 @@ function App() {
             <Route path="/profile" element={<Profile auth={authorized}/>} />
             <Route path="/login" element={<Login auth={authorized} callback={authorizedCallback}/>} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/item" element={<ItemPage />} />
           </Routes>
         </div>
       </div>
