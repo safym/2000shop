@@ -22,7 +22,19 @@ app.listen(PORT, () => {
 });
 
 app.get("/api/products", (req, res) => {
-  db.all('select * from product;', [], (err, result) => {
+  db.all('select ID, Name, Price, Announced, Image from product;', [], (err, result) => {
+    if (err) {
+      res.json({ message: {err} });
+      console.log(err); 
+    } else {
+      res.json({ message: {result} });
+    }
+  })
+});
+
+app.get("/api/products/:id", (req, res) => {
+  let id = req.params.id;
+  db.all('select * from product where ID = ?', id, (err, result) => {
     if (err) {
       res.json({ message: {err} });
       console.log(err); 
