@@ -18,10 +18,11 @@ import "./styles/profile.css";
 import "./styles/input.css";
 import "./styles/button.css";
 import "./styles/cart.css";
+import "./styles/itemPage.css";
 
 // import modules
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 
 function checkLocalStorage() {
   var isAuthorized = localStorage.getItem('authorized') === 'true';
@@ -48,7 +49,7 @@ function App() {
             <Route path="/profile" element={<Profile auth={authorized}/>} />
             <Route path="/login" element={<Login auth={authorized} callback={authorizedCallback}/>} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/item" element={<ItemPage />} />
+            <Route path="/products/:id" element={<ItemPage />} />
           </Routes>
         </div>
       </div>

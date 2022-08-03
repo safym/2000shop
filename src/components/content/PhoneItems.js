@@ -32,7 +32,7 @@ const PhoneItems = (props) => {
             <NavLink
               className="phoneItemWrapper"
               key={"link" + data.ID}
-              to="/item"
+              to={"/products/" + data.ID}
             >
               <PhoneItem data={data} />
             </NavLink>
