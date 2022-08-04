@@ -40,6 +40,25 @@
   color: rgb(0, 0, 0);
 }
 
+.myButton:focus,
+.myButtonActive:focus,
+.myButton:hover,
+.myButtonActive:hover {
+  text-decoration: none;
+}
+
+.myButton:active,
+.myButtonActive:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.myButton:not([disabled]):active,
+.myButtonActive:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
 .navButtonBack{
   display: flex;
   flex-direction: row;
@@ -66,27 +85,8 @@
 
   text-decoration: none;
 }
-
-.myButton:focus,
-.myButtonActive:focus {
-  text-decoration: none;
+.navButtonBack:active,
+.navButtonBack:hover {
+  border: 2px solid rgb(0, 0, 0);
 }
-
-.myButton:hover,
-.myButtonActive:hover  {
-  text-decoration: none;
-}
-
-.myButton:active,
-.myButtonActive:active {
-  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
-  outline: 0;
-}
-
-.myButton:not([disabled]):active,
-.myButtonActive:not([disabled]):active {
-  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-  transform: translate(2px, 2px);
-}
-
  

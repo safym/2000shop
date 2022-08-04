@@ -27,7 +27,7 @@
 .itemWrapper {
     display: grid;
     grid-template-columns: 25% 30% 20% 25%;
-    grid-template-rows: 1fr 100px 1fr;
+    grid-template-rows: 50% 100px 2fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px; 
 
@@ -41,11 +41,10 @@
 
 .itemPageImage { 
     grid-area: 1 / 1 / 3 / 5; 
-    
+
     max-width: 350px;
     max-height: 500px;
     padding: 30px;
-
 }
 .itemPageName { 
     border-radius: 20px;
@@ -81,8 +80,11 @@
 
 .itemDesc {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     padding: 20px;
+
+    line-height: 1.7;
+    
 }
 .itemSpec {
     margin-top: 20px;
@@ -92,9 +94,8 @@
 }
 
 .tableSpec {
-    border-radius: 20px;
-    border: 2px solid rgb(173, 150, 209);
-    font-size: 17px;
+    font-size: 20px;
+    border-spacing: 40px 20px;
 }
 
 tr * {
@@ -102,5 +103,5 @@ tr * {
 }
 
 .rowTitle {
-    font-weight: bold;
+    font-weight: bolder;
 }
