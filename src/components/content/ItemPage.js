@@ -35,11 +35,8 @@ const ItemPage = () => {
       console.log(items);
       return (
         <div className="Content">
-
           <div className="navItemPage">
-            <NavLink
-              className="navButtonBack"
-              to="/catalog">
+            <NavLink className="navButtonBack" to="/catalog">
               <IoMdArrowBack />
               Back
             </NavLink>
@@ -65,9 +62,9 @@ const ItemPage = () => {
             </h1>
 
             <div className="itemInfo">
-              <div className="itemDesc">
-                Это такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший такой крутой прикольный классный хароший телефончик.
-              </div>
+              <hr className="styledBorderline" />
+              <p className="itemDesc">{items.Description}</p>
+              <hr className="styledBorderline" />
               <div className="itemSpec">
                 <table className="tableSpec">
                   <tr>
@@ -94,10 +91,7 @@ const ItemPage = () => {
                     <td className="rowTitle">Display type</td>
                     <td>{items.DisplayType}</td>
                   </tr>
-                </table>
-
-                <table className="tableSpec">
-                <tr>
+                  <tr>
                     <td className="rowTitle">Display resolution</td>
                     <td>{items.DisplayResolution}</td>
                   </tr>
@@ -109,6 +103,9 @@ const ItemPage = () => {
                     <td className="rowTitle">CPU</td>
                     <td>{items.CPU}</td>
                   </tr>
+                </table>
+
+                <table className="tableSpec">
                   <tr>
                     <td className="rowTitle">Main camera</td>
                     <td>{items.MainCamera}</td>
@@ -121,10 +118,7 @@ const ItemPage = () => {
                     <td className="rowTitle">Battery</td>
                     <td>{items.Battery}</td>
                   </tr>
-                </table>
-
-                <table className="tableSpec">
-                <tr>
+                  <tr>
                     <td className="rowTitle">Memory</td>
                     <td>{items.Memory}</td>
                   </tr>
@@ -147,13 +141,11 @@ const ItemPage = () => {
                 </table>
               </div>
             </div>
-
           </div>
         </div>
       );
     }
   }
-
 };
 
 export default ItemPage;

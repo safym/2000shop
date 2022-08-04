@@ -55,7 +55,7 @@ const Cart = () => {
         </div>
       </div>
     );
-    finalCart.push(<hr className="cartBorderline" />);
+    finalCart.push(<hr className="styledBorderline" />);
 
     totalCoast = totalCoast + currentCart[i].Price;
   }
