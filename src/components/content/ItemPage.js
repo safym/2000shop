@@ -38,7 +38,7 @@ const ItemPage = () => {
           <div className="navItemPage">
             <NavLink className="navButtonBack" to="/catalog">
               <IoMdArrowBack />
-              Back
+              To catalog
             </NavLink>
           </div>
 

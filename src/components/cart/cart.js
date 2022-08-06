@@ -1,5 +1,6 @@
 //import modules
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 // import components
 import CartFooter from "./cartFooter";
@@ -35,13 +36,18 @@ const Cart = () => {
         className="cartItem"
         id={"cartItem" + currentCart[i].ID}
       >
-        <div className="itemSectionGeneral">
+        <NavLink
+          className="itemSectionGeneral"
+          key={currentCart[i].title}
+          to={"/products/" + currentCart[i].ID}
+        >
           <img
             className="cartItemImage"
             src={require("../../img/catalog/" + currentCart[i].Image)}
           />
           <h1 className="cartItemName">{currentCart[i].Name}</h1>
-        </div>
+        </NavLink>
+        
         <div className="itemSectionInfo">
           <h1 className="cartItemQuantity">×{currentCart[i].Quantity}</h1>
           <h1 className="cartItemPrice">{currentCart[i].Price} $</h1>
