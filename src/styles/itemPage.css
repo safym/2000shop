@@ -39,12 +39,14 @@
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
+.itemImageWraper {
+    grid-area: 1 / 1 / 3 / 2;
+}
+    
 .itemPageImage { 
-    grid-area: 1 / 1 / 3 / 5; 
-
     max-width: 350px;
     max-height: 500px;
-    padding: 30px;
+    margin: 15px;
 }
 .itemPageName { 
     border-radius: 20px;
@@ -59,7 +61,8 @@
 .itemPageName,
 .itemPageDisplay,
 .itemPageCamera,
-.itemPageMemory{
+.itemPageMemory,
+.itemImageWraper {
     display: flex;
     justify-content: center;
     align-items: center;

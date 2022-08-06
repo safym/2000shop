@@ -43,10 +43,13 @@ const ItemPage = () => {
           </div>
 
           <div className="itemWrapper">
-            <img
-              className="itemPageImage"
-              src={require("../../img/catalog/" + items.Image)}
-            />
+            <div className="itemImageWraper">
+              <img
+                className="itemPageImage"
+                src={require("../../img/catalog/" + items.Image)}
+              />
+            </div>
+
             <h1 className="itemPageName">{items.Name}</h1>
             <h1 className="itemPageDisplay">
               <BsSlashSquare className="specIcon" />
