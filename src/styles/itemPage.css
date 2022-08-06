@@ -27,9 +27,7 @@
 .itemWrapper {
     display: grid;
     grid-template-columns: 25% 30% 20% 25%;
-    grid-template-rows: 50% 100px 2fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; 
+    grid-template-rows: 50% 170px 2fr;
 
     width: 100%;
 
@@ -50,8 +48,7 @@
 }
 .itemPageName { 
     border-radius: 20px;
-    padding: 50px;
-    margin-left: 50px;
+    margin: 0 0 0 50px;
     grid-area: 1 / 2 / 2 / 5; 
 
     font-size: 80px;
@@ -62,7 +59,8 @@
 .itemPageDisplay,
 .itemPageCamera,
 .itemPageMemory,
-.itemImageWraper {
+.itemImageWraper,
+.itemSpec {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,20 +78,16 @@
 
 .itemInfo { grid-area: 3 / 1 / 4 / 5; } 
 
-
 .itemDesc {
     text-align: center;
     font-size: 25px;
     padding: 20px;
 
-    line-height: 1.7;
-    
+    line-height: 1.7; 
 }
+
 .itemSpec {
     margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .tableSpec {
