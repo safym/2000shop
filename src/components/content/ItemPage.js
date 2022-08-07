@@ -2,6 +2,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import Color, { Palette } from 'color-thief-react';
 
 //import icons
 import { RiCameraFill } from "react-icons/ri";
@@ -32,7 +33,8 @@ const ItemPage = () => {
     return <div>Ошибка: {error.message}</div>;
   } else {
     if (items.length != 0) {
-      console.log(items);
+      const imgSrc = require("../../img/catalog/" + items.Image);
+
       return (
         <div className="Content">
           <div className="navItemPage">
@@ -46,11 +48,26 @@ const ItemPage = () => {
             <div className="itemImageWraper">
               <img
                 className="itemPageImage"
-                src={require("../../img/catalog/" + items.Image)}
+                src={imgSrc}
               />
             </div>
 
-            <h1 className="itemPageName">{items.Name}</h1>
+            <div className="itemPageNameWrap" >
+              <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={6}>
+                {({ data, loading }) => {
+                  if (loading) return <ItemPage />;
+                  return (
+                    <h1
+                      className="itemPageName"
+                      style={{ backgroundImage: "linear-gradient(to bottom left," + data[0] + ", " + data[5] }}>
+                      {items.Name}
+                    </h1>
+                  );
+                }}
+              </Palette>
+            </div>
+
+            {/* <h1 className="itemPageName">{items.Name}</h1> */}
             <h1 className="itemPageDisplay">
               <BsSlashSquare className="specIcon" />
               {items.DisplayResolution}
