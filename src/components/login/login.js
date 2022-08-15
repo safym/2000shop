@@ -1,12 +1,16 @@
 // import components
 import { Component, useState } from "react";
-import getUsers from "../../misc/accounts";
+import { useNavigate } from "react-router-dom"
 
 const ComponentsLogin = (props) => {
-
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+
+  const [auth, setAuth] = useState(false);
+
   const [color, setColor] = useState("#000000");
+
+  const history = useNavigate();
 
   const handleChange = (event) => {
     setColor("#000000");
@@ -20,29 +24,38 @@ const ComponentsLogin = (props) => {
     if (input.name == "password") {
       setPassword(value);
     }
-  }
-
-  const checkAccount = () => {
-    var users = getUsers();
-
-    for (let entry of users) {
-      if (login == entry[0] && password == entry[1]) {
-        return true;
-      }
-    }
-
-    setColor("#ff646b");
-    return false;
   };
 
-  const handleFormSubmit = (event) => {
+  function checkAccount() {
+    const url = "http://localhost:3001/api/auth/login=" + login + "&pass=" + password;
+
+    function getDataApi(url, callback) {
+      fetch(url)
+        .then((response) => response.json())
+        .then((result) => callback(result));
+    }
+
+    getDataApi(url, (data) => {
+      setAuth(data.message);
+    });
+
+    if (auth== true) {
+      history("/user/" + login);
+    }
+  }
+
+
+  const handleFormSubmit = async(event) => {
+    checkAccount();
+    console.log(auth);
+
     event.preventDefault();
-    if (checkAccount()) {
+    if (auth) {
       localStorage.setItem("login", login);
       localStorage.setItem("password", password);
       localStorage.setItem("authorized", "true");
 
-      props.callback(checkAccount());
+      props.callback(auth);
     }
   };
 
@@ -74,6 +87,6 @@ const ComponentsLogin = (props) => {
       </button>
     </form>
   );
-}
+};
 
 export default ComponentsLogin;
