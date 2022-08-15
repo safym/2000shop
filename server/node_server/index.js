@@ -17,6 +17,7 @@ const db = new sqlite3.Database(__dirname + '/main.sqlite', (err) => {
     }
 });
 
+// получение основных данных о всех товарах для каталога
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
@@ -32,6 +33,7 @@ app.get("/api/products", (req, res) => {
   })
 });
 
+// получение всех данных по единице товара
 app.get("/api/products/:id", (req, res) => {
   let id = req.params.id;
   db.all('select * from product where ID = ?', id, (err, result) => {
@@ -40,6 +42,26 @@ app.get("/api/products/:id", (req, res) => {
       console.log(err); 
     } else {
       res.json({ message: {result} });
+    }
+  })
+});
+
+// проврека при авторизации пользователя
+app.get("/api/auth/login=:login&pass=:password", (req, res) => {
+  let login = req.params.login;
+  let password = req.params.password;
+
+  db.all("select * from user where Login = ?", login, (err, result) => {
+    if (err) {
+      res.json({ message: {err} });
+      console.log(err); 
+    } else { 
+
+      if (result.length != 0 && password == result[0].Password) {
+        res.json({ message: true });
+      } else {
+        res.json({ message: false });
+      }
     }
   })
 });
