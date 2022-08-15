@@ -48,7 +48,7 @@ function App() {
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/profile" element={<Profile auth={authorized}/>} />
             <Route path="/login" element={<Login auth={authorized} callback={authorizedCallback}/>} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart auth={authorized}/>} />
             <Route path="/products/:id" element={<ItemPage />} />
           </Routes>
         </div>
