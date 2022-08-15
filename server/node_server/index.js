@@ -46,6 +46,20 @@ app.get("/api/products/:id", (req, res) => {
   })
 });
 
+// получение всех данных по пользователю
+app.get("/api/user/id=:id", (req, res) => {
+  let id = req.params.id;
+  db.all('select * from user where ID = ?', id, (err, result) => {
+    if (err) {
+      res.json({ message: {err} });
+      console.log(err); 
+    } else {
+      res.json({ message: {result} });
+    }
+  })
+});
+
+
 // проврека при авторизации пользователя
 app.get("/api/auth/login=:login&pass=:password", (req, res) => {
   let login = req.params.login;
