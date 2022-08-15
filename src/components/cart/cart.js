@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 // import components
 import CartFooter from "./cartFooter";
 
-const Cart = () => {
+const Cart = (props) => {
   var currentCart = JSON.parse(localStorage.getItem("cart"));
 
   let [cart, setCart] = useState(currentCart);
@@ -69,7 +69,7 @@ const Cart = () => {
     <div className="Content">
       <div className="cartItems">
         {finalCart}
-        <CartFooter totalCoast={totalCoast} />
+        <CartFooter totalCoast={totalCoast} auth={props.auth}/>
       </div>
     </div>
   );
