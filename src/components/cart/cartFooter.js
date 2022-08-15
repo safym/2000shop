@@ -17,19 +17,13 @@ const CartFooter = (props) => {
 };
 
 const BtnCheckout = (props) => {
-  console.log(props.auth)
   let btnContent;
   if (props.auth) {
     btnContent = "Checkout >" 
   } else {
     btnContent = "Sign to checkout" 
   }
-  // if (props.auth) {
-  //   return (<button className="myButton">Checkout ></button>)
-  // } else {
-  //   return (<button className="myButton" disabled="true">Sign to checkout</button>)
-  // }
-
+  
   return (<button className="myButton" disabled={!props.auth}>{btnContent}</button>)
 }
 
