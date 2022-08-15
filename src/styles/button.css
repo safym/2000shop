@@ -35,6 +35,12 @@
   color: #fff;
 }
 
+.myButton:disabled,
+.myButton[disabled] {
+  color: #000;
+  background-color: rgb(212, 212, 212);
+}
+
 .myButtonActive {
   background-color: #cc54ab;
   color: rgb(0, 0, 0);
