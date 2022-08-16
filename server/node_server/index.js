@@ -47,9 +47,9 @@ app.get("/api/products/:id", (req, res) => {
 });
 
 // получение всех данных по пользователю
-app.get("/api/user/id=:id", (req, res) => {
-  let id = req.params.id;
-  db.all('select * from user where ID = ?', id, (err, result) => {
+app.get("/api/user/:login", (req, res) => {
+  let login = req.params.login;
+  db.all('select * from user where Login = ?', login, (err, result) => {
     if (err) {
       res.json({ message: {err} });
       console.log(err); 
