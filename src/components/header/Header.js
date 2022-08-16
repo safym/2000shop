@@ -11,7 +11,7 @@ const Header = (props) => {
       <LogoLink />
       <nav className="buttons_nav">
         <HeaderLink name="Catalog" href="/catalog" visible={true} />
-        <HeaderLink name="Profile" href="/profile" visible={props.auth} />
+        <HeaderLink name="Profile" href={"/user/" + props.login} visible={props.auth}/>
         <BtnSignIn name="Sign in" href="/login" visible={!props.auth} />
         <BtnSignOut name="Sign out" href="/home" callback={props.callback} visible={props.auth} />
         <CartLink href="/cart" />

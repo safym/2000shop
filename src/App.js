@@ -24,29 +24,36 @@ import "./styles/itemPage.css";
 import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 
-function checkLocalStorage() {
+function checkLocalStorageAuth() {
   var isAuthorized = localStorage.getItem('authorized') === 'true';
   return isAuthorized;
 }
 
+function checkLocalStorageLogin() {
+  var login = localStorage.getItem('login');
+  return login;
+}
+
 function App() {
 
-  const [authorized, setAuthorized] = useState(checkLocalStorage());
+  const [authorized, setAuthorized] = useState(checkLocalStorageAuth());
+  const [login, setLogin] = useState(checkLocalStorageLogin());
 
   const authorizedCallback = (LoginData) => {
     setAuthorized(LoginData);
+    setLogin(checkLocalStorageLogin())
   }
 
   return (
     <BrowserRouter>
       <div className="Wrapper">
-        <Header auth={authorized} callback={authorizedCallback} />
+        <Header auth={authorized} callback={authorizedCallback} login={login}/>
         <div className="WrapperContent">
           <Routes>
             <Route path="/" element={ <Navigate to="/home"/> } />
             <Route path="/home" element={<HomePage />} />
             <Route path="/catalog" element={<Catalog />} />
-            <Route path="/profile" element={<Profile auth={authorized}/>} />
+            <Route path="/user/:login" element={<Profile auth={authorized}/>} />
             <Route path="/login" element={<Login auth={authorized} callback={authorizedCallback}/>} />
             <Route path="/cart" element={<Cart auth={authorized}/>} />
             <Route path="/products/:id" element={<ItemPage />} />

@@ -1,55 +1,53 @@
-.AboutProfile * {
-    color: #ae7cd8;
+.aboutProfile * {
+  color: #232323;
 }
 
-.AboutProfile {
-    width: 1000px;
+.aboutProfile {
+  display: flex;
+  flex-direction: row;
 
-    display: flex;
-    flex-direction: row;
+  justify-content: start;
+  align-items: center;
 
-    justify-content: start;
-    align-items: flex-start;
+  width: 100%;
+  padding: 4%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin-bottom: 65px;
 }
 
 .UserInfo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin: 50px;
+  margin: 50px;
 }
 
-.AboutProfile img {
-    width: 200px;
-    height: 200px;
-
-    margin: 50px;
-
-    border-radius: 100px;
-
-    background-color: #3b2949;
+.imgProfile {
+  font-size: 250px;
 }
 
 .Profile {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    height: 100vh;
+  height: 100vh;
 }
 
 .NewPost {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    background-color: #ae7cd8;
-    padding: 30px;
-    border-radius: 20px;
+  background-color: #ae7cd8;
+  padding: 30px;
+  border-radius: 20px;
 }
 
 .publish {
-    display: flex;
+  display: flex;
 
-    float: right;
+  float: right;
 
-    width: 100%;
+  width: 100%;
 }
