@@ -28,7 +28,7 @@ const ComponentsLogin = (props) => {
 
   function checkAccount() {
     const url = "http://localhost:3001/api/auth/login=" + login + "&pass=" + password;
-
+    
     function getDataApi(url, callback) {
       fetch(url)
         .then((response) => response.json())

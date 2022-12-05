@@ -6,18 +6,18 @@ import { NavLink } from "react-router-dom";
 import CartFooter from "./cartFooter";
 
 const Cart = (props) => {
-  var currentCart = JSON.parse(localStorage.getItem("cart"));
+  let currentCart = JSON.parse(localStorage.getItem("cart"));
 
   let [cart, setCart] = useState(currentCart);
 
-  var finalCart = [];
-  var totalCoast = 0;
+  let finalCart = [];
+  let totalCoast = 0;
 
   console.log(currentCart);
 
-  var deleteCartItem = (event) => {
+  const deleteCartItem = (event) => {
     console.log(event);
-    var selectedID = event.target.id.replace("delete_CartItem", "");
+    let selectedID = event.target.id.replace("delete_CartItem", "");
 
     finalCart = cart.filter(function (currentCartItem) {
       console.log(currentCartItem.ID);
@@ -29,7 +29,7 @@ const Cart = (props) => {
     localStorage.setItem("cart", JSON.stringify(finalCart));
   };
 
-  for (var i = currentCart.length - 1; i >= 0; i--) {
+  for (let i = currentCart.length - 1; i >= 0; i--) {
     finalCart.push(
       <div
         key={currentCart[i].title}
