@@ -5,11 +5,10 @@
 .aboutProfile {
   display: flex;
   flex-direction: row;
-
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
 
-  width: 100%;
+  width: 70%;
   padding: 4%;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -21,33 +20,20 @@
   display: flex;
   flex-direction: column;
 
-  margin: 50px;
+  margin: var(--index);
 }
 
 .imgProfile {
-  font-size: 250px;
+  font-size: calc( 10 * var(--index));
 }
 
-.Profile {
-  display: flex;
-  flex-direction: column;
-
-  height: 100vh;
-}
-
-.NewPost {
-  display: flex;
-  flex-direction: column;
-
-  background-color: #ae7cd8;
-  padding: 30px;
-  border-radius: 20px;
-}
-
-.publish {
-  display: flex;
-
-  float: right;
-
-  width: 100%;
+@media screen and (max-width: 1200px) {
+  .aboutProfile {
+    font-size: 12px;
+      width: 100%;
+      flex-direction: column;
+    }
+  .UserInfo {
+   align-items: center;
+  }
 }

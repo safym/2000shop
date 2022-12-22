@@ -1,79 +1,95 @@
 .catalog {
-    display: flex;
-    justify-content: center;
-    align-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .cardItem {
-    position: relative;
-    border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  border-radius: 5px;
 
-    width: 350px;
-    margin: 1%;
-    padding: 25px;  
+  width: 350px;
+  margin: calc(var(--index));
+  padding: calc(var(--index));
 
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    text-decoration: none;
-    color: black;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  text-decoration: none;
+  color: black;
 }
 
 .phoneItemWrapper {
-    /* position: relative; */
-    border-radius: 5px;
-
-    width: 350px;
-    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
-    text-decoration: none;
-    color: black;
+  width: 100%;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
 }
 
 .phoneItem {
-    width: 100%;
-    padding: 25px;
+  width: 100%;
 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.itemImage{
-    max-height: 250px;
-    margin:10%;
+.itemImage {
+  max-height: 250px;
+  margin: 10%;
 }
 
 .itemName {
-    margin: 0;
+  white-space: nowrap;
+  margin: 0;
 }
 
-.itemYear{
-    position: absolute;
+.itemYear {
+  position: absolute;
 
-    top:0px;
-    left: 78%;
+  top: 10px;
+  right: 10px;
 
-    background-color: rgb(217, 255, 193);
-    border-radius: 30px;
+  background-color: rgb(217, 255, 193);
+  border-radius: 30px;
 
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+  margin: 0;
+  padding: 7px;
 
-    font-size: 20px;
+  font-size: var(--index);
 }
 
-.itemPrice {
-    font-size: 40px;
+.itemPrice,
+.itemName {
+  margin-bottom: calc(0.7 * var(--index));
+  font-size: calc(1.2 * var(--index));
 }
 
 .cardItem:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 24px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+}
+
+@media screen and (max-width: 1200px) {
+  .cardItem {
+    width: calc(25 * var(--index));
+  }
+  .itemPrice,
+  .itemName {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  .itemImage {
+    height: 200px;
+    margin: 10%;
+  }
+  .itemYear {
+    font-size: 20px;
+  }
 }

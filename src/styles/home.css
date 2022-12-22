@@ -1,40 +1,46 @@
-.Card * {
+.Card h1 {
     color:#000000 ;
-    font-size: 150px;
+    font-size: calc(5 * var(--index));
     font-family: "wintermute", monospace;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.HomeWrapper {
+    padding-left: calc(5 * var(--index));
+    padding-right: calc(5 * var(--index));
 }
 
 .Card {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     align-items: center;
-    
-    margin-top: 5%;
-    padding: 50px;
-    border-radius: 30px;
+
+    padding: calc(2 * var(--index));
+    border-radius: calc(1.5 * var(--index));
+
     border: 3px solid #000000;
 
     background-image: url(../img/pic/pinkphones2.jpg);
     background-size: 100%;
 }
 
-.Card h1 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 .Article {
-    margin-top: 30px;
-    padding-left: 80px;
-    padding-right: 80px;
-
+    margin-top: calc(2 * var(--index));
+    font-size: calc(1.2* var(--index));
     text-align: center;
 }
 
-.text {
-    font-size: 30px;
-}
 
+@media screen and (max-width: 1200px) {
+    .Card h1 {
+        font-size: 30px;
+    }
+    .HomeWrapper {
+        padding: 0;
+    }
+    .Article {
+        font-size: 20px;
+    }
+}

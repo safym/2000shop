@@ -5,11 +5,13 @@ import TextAbout from "./textAbout";
 const HomePage = () => {
   return (
     <div className="Content">
-      <div className="Card">
-        <Article />
-      </div>
-      <div className="TextWrap">
-        <TextAbout />
+      <div className="HomeWrapper">
+        <div className="Card">
+          <Article />
+        </div>
+        <div className="TextWrap">
+          <TextAbout />
+        </div>
       </div>
     </div>
   );

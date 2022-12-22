@@ -1,3 +1,7 @@
+:root {
+  --index: calc(1vw + 1vh);
+}
+
 *,
 *::before,
 *::after {
@@ -46,12 +50,17 @@ body {
   margin: 0;
   display: grid;
 
-  width: 100%;
-
+  width: 100vw;
 }
 
 .WrapperContent {
-  margin-top: 65px;
-  margin-bottom: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(3 * var(--index));
+  margin-bottom: calc(3 * var(--index));
+  padding-left:  calc(3 * var(--index));
+  padding-right:  calc(3 * var(--index));
+
   background-color: rgb(255, 255, 255);
 }
