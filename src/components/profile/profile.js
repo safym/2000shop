@@ -8,8 +8,6 @@ import React, { useState, useEffect } from "react";
 //import icons
 import {GrPhone, GrUser, GrContactInfo}  from 'react-icons/gr';
 
-
-
 const  Profile = () => {
   let { login } = useParams();
 
@@ -17,6 +15,7 @@ const  Profile = () => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
+
     fetch("https://ubivaem.space/api/user/" + login)
       .then((res) => res.json())
       .then(
