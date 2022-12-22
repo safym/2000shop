@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/2000shop/home/static/css/main.fefb9ec5.css",
-    "main.js": "/2000shop/home/static/js/main.b0c9e925.js",
-    "static/js/787.c20870d0.chunk.js": "/2000shop/home/static/js/787.c20870d0.chunk.js",
-    "static/media/pinkphones2.jpg": "/2000shop/home/static/media/pinkphones2.ed665d7f43f187674afe.jpg",
-    "static/media/samsung.jpg": "/2000shop/home/static/media/samsung.26fe35731c451ba75d0b.jpg",
-    "static/media/LG_Town_GT350.jpg": "/2000shop/home/static/media/LG_Town_GT350.07e3d438657f4f33214c.jpg",
-    "static/media/motorola_a45.jpg": "/2000shop/home/static/media/motorola_a45.e1ccd7c4b658c6c2ad23.jpg",
-    "static/media/motorola_em28.jpg": "/2000shop/home/static/media/motorola_em28.7cda8fbe86a6c09df8e9.jpg",
-    "static/media/nk57-monospace-cd-bk.ttf": "/2000shop/home/static/media/nk57-monospace-cd-bk.a4fe433d2ce0520af849.ttf",
-    "static/media/motorola_rokr_e2.jpg": "/2000shop/home/static/media/motorola_rokr_e2.728b8d855b512de8f34d.jpg",
-    "static/media/nokia_2300.jpg": "/2000shop/home/static/media/nokia_2300.1c67535a5f497f8e6408.jpg",
-    "static/media/wintermute.regular.ttf": "/2000shop/home/static/media/wintermute.regular.7a741733b905cae4f3d0.ttf",
-    "static/media/nokia_3200.jpg": "/2000shop/home/static/media/nokia_3200.8bb9b7eef033893cb265.jpg",
-    "static/media/samsung_i700.jpg": "/2000shop/home/static/media/samsung_i700.5c3fe9380b7cb2ea6ac5.jpg",
-    "static/media/samsung_x830.jpg": "/2000shop/home/static/media/samsung_x830.2510551fad1e1e363ccb.jpg",
-    "static/media/motorola_razr_v3.jpg": "/2000shop/home/static/media/motorola_razr_v3.d443fef7c42860ec8774.jpg",
-    "static/media/lg5500.jpg": "/2000shop/home/static/media/lg5500.f1c4e14316132c0a691b.jpg",
-    "index.html": "/2000shop/home/index.html",
-    "main.fefb9ec5.css.map": "/2000shop/home/static/css/main.fefb9ec5.css.map",
-    "main.b0c9e925.js.map": "/2000shop/home/static/js/main.b0c9e925.js.map",
-    "787.c20870d0.chunk.js.map": "/2000shop/home/static/js/787.c20870d0.chunk.js.map"
+    "main.css": "/2000shop/static/css/main.e115a274.css",
+    "main.js": "/2000shop/static/js/main.d7b78b94.js",
+    "static/js/787.c20870d0.chunk.js": "/2000shop/static/js/787.c20870d0.chunk.js",
+    "static/media/pinkphones2.jpg": "/2000shop/static/media/pinkphones2.ed665d7f43f187674afe.jpg",
+    "static/media/samsung.jpg": "/2000shop/static/media/samsung.26fe35731c451ba75d0b.jpg",
+    "static/media/LG_Town_GT350.jpg": "/2000shop/static/media/LG_Town_GT350.07e3d438657f4f33214c.jpg",
+    "static/media/motorola_a45.jpg": "/2000shop/static/media/motorola_a45.e1ccd7c4b658c6c2ad23.jpg",
+    "static/media/motorola_em28.jpg": "/2000shop/static/media/motorola_em28.7cda8fbe86a6c09df8e9.jpg",
+    "static/media/nk57-monospace-cd-bk.ttf": "/2000shop/static/media/nk57-monospace-cd-bk.a4fe433d2ce0520af849.ttf",
+    "static/media/motorola_rokr_e2.jpg": "/2000shop/static/media/motorola_rokr_e2.728b8d855b512de8f34d.jpg",
+    "static/media/nokia_2300.jpg": "/2000shop/static/media/nokia_2300.1c67535a5f497f8e6408.jpg",
+    "static/media/wintermute.regular.ttf": "/2000shop/static/media/wintermute.regular.7a741733b905cae4f3d0.ttf",
+    "static/media/nokia_3200.jpg": "/2000shop/static/media/nokia_3200.8bb9b7eef033893cb265.jpg",
+    "static/media/samsung_i700.jpg": "/2000shop/static/media/samsung_i700.5c3fe9380b7cb2ea6ac5.jpg",
+    "static/media/samsung_x830.jpg": "/2000shop/static/media/samsung_x830.2510551fad1e1e363ccb.jpg",
+    "static/media/motorola_razr_v3.jpg": "/2000shop/static/media/motorola_razr_v3.d443fef7c42860ec8774.jpg",
+    "static/media/lg5500.jpg": "/2000shop/static/media/lg5500.f1c4e14316132c0a691b.jpg",
+    "index.html": "/2000shop/index.html",
+    "main.e115a274.css.map": "/2000shop/static/css/main.e115a274.css.map",
+    "main.d7b78b94.js.map": "/2000shop/static/js/main.d7b78b94.js.map",
+    "787.c20870d0.chunk.js.map": "/2000shop/static/js/787.c20870d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fefb9ec5.css",
-    "static/js/main.b0c9e925.js"
+    "static/css/main.e115a274.css",
+    "static/js/main.d7b78b94.js"
   ]
 }
