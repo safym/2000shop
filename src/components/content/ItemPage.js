@@ -19,7 +19,7 @@ const ItemPage = () => {
   const [item, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/products/" + id)
+    fetch("http://195.14.189.111:3001/api/products/" + id)
       .then((res) => res.json())
       .then(
         (result) => {

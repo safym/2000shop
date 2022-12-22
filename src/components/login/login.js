@@ -27,7 +27,7 @@ const ComponentsLogin = (props) => {
   };
 
   function checkAccount() {
-    const url = "http://localhost:3001/api/auth/login=" + login + "&pass=" + password;
+    const url = "http://195.14.189.111:3001/api/auth/login=" + login + "&pass=" + password;
     
     function getDataApi(url, callback) {
       fetch(url)

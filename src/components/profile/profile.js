@@ -17,7 +17,7 @@ const  Profile = () => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/user/" + login)
+    fetch("http://195.14.189.111:3001/api/user/" + login)
       .then((res) => res.json())
       .then(
         (result) => {
