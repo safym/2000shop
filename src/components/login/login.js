@@ -1,6 +1,6 @@
 // import components
 import { Component, useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const ComponentsLogin = (props) => {
   const [login, setLogin] = useState("");
@@ -27,30 +27,34 @@ const ComponentsLogin = (props) => {
   };
 
   function checkAccount() {
-    const url = "http://195.14.189.111:3001/api/auth/login=" + login + "&pass=" + password;
-    
-    function getDataApi(url, callback) {
+    const url =
+      "http://195.14.189.111:3001/api/auth/login=" +
+      login +
+      "&pass=" +
+      password;
+
+    async function getDataApi(url, callback) {
       fetch(url)
         .then((response) => response.json())
-        .then((result) => callback(result));
+        .then((result) => callback(result))
+
     }
 
     getDataApi(url, (data) => {
+      console.log(data.message)
       setAuth(data.message);
-    });
 
-    if (auth== true) {
-      history("/user/" + login);
-    }
+      if (data.message == true) {
+        history("/user/" + login);
+      }
+    });
   }
 
-
-  const handleFormSubmit = async(event) => {
+  const handleFormSubmit = async (event) => {
     checkAccount();
-    console.log(auth);
 
     event.preventDefault();
-    if (auth) {
+    if (auth == true) {
       localStorage.setItem("login", login);
       localStorage.setItem("password", password);
       localStorage.setItem("authorized", "true");
@@ -68,7 +72,7 @@ const ComponentsLogin = (props) => {
         name="login"
         value={login}
         onChange={handleChange}
-        style={{ "color": color }}
+        style={{ color: color }}
       />
 
       <input
@@ -79,7 +83,7 @@ const ComponentsLogin = (props) => {
         placeholder="Password"
         value={password}
         onChange={handleChange}
-        style={{ "color": color }}
+        style={{ color: color }}
       />
 
       <button className="myButton" type="submit">
