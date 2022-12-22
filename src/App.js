@@ -30,18 +30,20 @@ function checkLocalStorageAuth() {
 }
 
 function checkLocalStorageLogin() {
-  var login = localStorage.getItem('login');
+  let login = localStorage.getItem('login');
+  console.log(localStorage.getItem('login'))
   return login;
 }
 
 function App() {
 
   const [authorized, setAuthorized] = useState(checkLocalStorageAuth());
-  const [login, setLogin] = useState(checkLocalStorageLogin());
+  const [login, setLogin] = useState();
 
   const authorizedCallback = (LoginData) => {
     setAuthorized(LoginData);
     setLogin(checkLocalStorageLogin())
+    console.log(LoginData, checkLocalStorageLogin())
   }
 
   return (

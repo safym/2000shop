@@ -1,7 +1,6 @@
 //import modules
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { Palette } from "color-thief-react";
 
 //import icons
 import { RiCameraFill } from "react-icons/ri";
@@ -11,6 +10,7 @@ import { MdMemory } from "react-icons/md";
 //import compoments
 import BtnBack from "../utility/BtnBack";
 import ItemNameColoful from "./IItemNameColorful";
+import ItemSpec from "./ItemSpec";
 
 const ItemPage = () => {
   let { id } = useParams();
@@ -36,6 +36,26 @@ const ItemPage = () => {
   } else {
     if (item.length != 0) {
       const imgSrc = require("../../img/catalog/" + item.Image);
+
+      let arrTableSpec = [
+        "Name", 
+        "Announced", 
+        "Network Technology",
+        "Body Dimensions",
+        "Body Weight",
+        "Display Type",
+        "Display Resolution",
+        "OS",
+        "CPU",
+        "Main Camera",
+        "Selfie Camera",
+        "Battery",
+        "Memory",
+        "Bluetooth",
+        "GPS",
+        "Radio",
+        "USB"
+      ];
 
       return (
         <div className="Content">
@@ -69,81 +89,9 @@ const ItemPage = () => {
               <hr className="styledBorderline" />
               <p className="itemDesc">{item.Description}</p>
               <hr className="styledBorderline" />
-              <div className="itemSpec">
-                <table className="tableSpec">
-                  <tr>
-                    <td className="rowTitle">Name</td>
-                    <td>{item.Name}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Announced</td>
-                    <td>{item.Announced}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Network technology</td>
-                    <td>{item.NetworkTechnology}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Body dimensions</td>
-                    <td>{item.BodyDimensions}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Body weight</td>
-                    <td>{item.BodyWeight}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Display type</td>
-                    <td>{item.DisplayType}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Display resolution</td>
-                    <td>{item.DisplayResolution}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">OS</td>
-                    <td>{item.OS}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">CPU</td>
-                    <td>{item.CPU}</td>
-                  </tr>
-                </table>
 
-                <table className="tableSpec">
-                  <tr>
-                    <td className="rowTitle">Main camera</td>
-                    <td>{item.MainCamera}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Selfie camera</td>
-                    <td>{item.SelfieCamera}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Battery</td>
-                    <td>{item.Battery}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Memory</td>
-                    <td>{item.Memory}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Bluetooth</td>
-                    <td>{item.Bluetooth}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">GPS</td>
-                    <td>{item.GPS}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">Radio</td>
-                    <td>{item.Radio}</td>
-                  </tr>
-                  <tr>
-                    <td className="rowTitle">USB</td>
-                    <td>{item.USB}</td>
-                  </tr>
-                </table>
-              </div>
+              <ItemSpec item={item} arrTableSpec={arrTableSpec} />
+
             </div>
           </div>
         </div>
