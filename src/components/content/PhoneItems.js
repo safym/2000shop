@@ -10,7 +10,7 @@ const PhoneItems = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://195.14.189.111:3001/api/products")
+    fetch("https://ubivaem.space/api/products")
       .then((res) => res.json())
       .then(
         (result) => {

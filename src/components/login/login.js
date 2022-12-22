@@ -28,7 +28,7 @@ const ComponentsLogin = (props) => {
 
   function checkAccount() {
     const url =
-      "http://195.14.189.111:3001/api/auth/login=" +
+      "https://ubivaem.space/api/auth/login=" +
       login +
       "&pass=" +
       password;
