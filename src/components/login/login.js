@@ -1,12 +1,10 @@
 // import components
-import { Component, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ComponentsLogin = (props) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-
-  const [auth, setAuth] = useState(false);
 
   const [color, setColor] = useState("#000000");
 
@@ -26,41 +24,36 @@ const ComponentsLogin = (props) => {
     }
   };
 
-  function checkAccount() {
+  async function checkAccount() {
     const url =
-      "https://ubivaem.space/api/auth/login=" +
-      login +
-      "&pass=" +
-      password;
+      "https://ubivaem.space/api/auth/login=" + login + "&pass=" + password;
 
-    async function getDataApi(url, callback) {
-      fetch(url)
-        .then((response) => response.json())
-        .then((result) => callback(result))
-
-    }
-
-    getDataApi(url, (data) => {
-      console.log(data.message)
-      setAuth(data.message);
-
-      if (data.message == true) {
-        history("/user/" + login);
-      }
-    });
+    fetch(url)
+      .then((response) => response.json())
+      .then((result) => {
+        return result.message;
+      })
+      .then((resultAuth) => {
+        if (resultAuth == true) {
+          localStorage.setItem("login", login);
+          localStorage.setItem("authorized", "true");
+        }
+        return resultAuth;
+      })
+      .then((resultAuth) => {
+        props.callback(resultAuth);
+        return resultAuth;
+      })
+      .then((resultAuth) => {
+        if (resultAuth) {
+          history("/user/" + login);
+        }
+      });
   }
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     checkAccount();
-
     event.preventDefault();
-    if (auth == true) {
-      localStorage.setItem("login", login);
-      localStorage.setItem("password", password);
-      localStorage.setItem("authorized", "true");
-
-      props.callback(auth);
-    }
   };
 
   return (
