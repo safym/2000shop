@@ -28,7 +28,8 @@ const PhoneItems = (props) => {
     return (
       <div className="catalog">
         {items.map((data) => (
-          <div className="cardItem">
+          <div className="cardItem"
+               key={"div" + data.ID}>
             <NavLink
               className="phoneItemWrapper"
               key={"link" + data.ID}

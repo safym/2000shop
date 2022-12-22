@@ -1,5 +1,5 @@
 //import modules
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // import components
@@ -13,15 +13,10 @@ const Cart = (props) => {
   let finalCart = [];
   let totalCoast = 0;
 
-  console.log(currentCart);
-
   const deleteCartItem = (event) => {
-    console.log(event);
     let selectedID = event.target.id.replace("delete_CartItem", "");
 
     finalCart = cart.filter(function (currentCartItem) {
-      console.log(currentCartItem.ID);
-      console.log(selectedID);
       return currentCartItem.ID !== Math.floor(selectedID);
     });
 
@@ -32,29 +27,37 @@ const Cart = (props) => {
   for (let i = currentCart.length - 1; i >= 0; i--) {
     finalCart.push(
       <div
-        key={currentCart[i].title}
+        key={"itemWrapper" + currentCart[i].ID}
         className="cartItem"
         id={"cartItem" + currentCart[i].ID}
       >
         <NavLink
           className="itemSectionGeneral"
-          key={currentCart[i].title}
+          key={"link" + currentCart[i].ID}
           to={"/products/" + currentCart[i].ID}
         >
           <img
+            key={"itemImg" + currentCart[i].ID}
             className="cartItemImage"
             src={require("../../img/catalog/" + currentCart[i].Image)}
           />
-          <h1 className="cartItemName">{currentCart[i].Name}</h1>
+          <h1 className="cartItemName" key={"itemName" + currentCart[i].ID}>
+            {currentCart[i].Name}
+          </h1>
         </NavLink>
-        
-        <div className="itemSectionInfo">
-          <h1 className="cartItemQuantity">×{currentCart[i].Quantity}</h1>
-          <h1 className="cartItemPrice">{currentCart[i].Price} $</h1>
+
+        <div className="itemSectionInfo" key={"itemInfo" + currentCart[i].ID}>
+          <h1 className="cartItemQuantity" key={"quantity" + currentCart[i].ID}>
+            ×{currentCart[i].Quantity}
+          </h1>
+          <h1 className="cartItemPrice" key={"price" + currentCart[i].ID}>
+            {currentCart[i].Price} $
+          </h1>
           <button
             className="deleteCartItem"
             id={"delete_CartItem" + currentCart[i].ID}
             onClick={deleteCartItem}
+            key={"delete" + currentCart[i].ID}
           >
             ×
           </button>
@@ -69,7 +72,7 @@ const Cart = (props) => {
     <div className="Content">
       <div className="cartItems">
         {finalCart}
-        <CartFooter totalCoast={totalCoast} auth={props.auth}/>
+        <CartFooter totalCoast={totalCoast} auth={props.auth} />
       </div>
     </div>
   );

@@ -10,8 +10,6 @@ const BtnAddToCart = (props) => {
   
   const [isInCart, setIsInCart] = useState(resultCheck)
 
-  console.log(isInCart);
-
   if (isInCart) {
     return (
       <button

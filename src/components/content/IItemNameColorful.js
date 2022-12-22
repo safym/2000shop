@@ -5,7 +5,7 @@ const ItemNameColoful = (props) => {
   return (
     <Palette src={props.imgSrc} crossOrigin="anonymous" format="hex" colorCount={10}>
       {({ data, loading }) => {
-        if (loading) return console.log(props.imgSrc);
+        if (loading) return;
         return (
           <h1
             className="itemPageName"
