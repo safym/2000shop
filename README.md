@@ -7,6 +7,8 @@
 login: Admin
 passsword: 12345
 
+Развернутое приложение на Github Pages: https://safym.github.io/2000shop/
+
 # Запуск проекта
 ## 1. Директория /server (запуск веб-сервера с API)
 1.1.  Установить пакеты:
