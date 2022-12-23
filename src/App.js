@@ -52,7 +52,7 @@ function App() {
         <Header auth={authorized} callback={authorizedCallback} login={login}/>
         <div className="WrapperContent">
           <Routes>
-            <Route path="/" element={ <Navigate to="/home"/> } />
+            <Route path="/2000shop" element={ <Navigate to="/home"/> } />
             <Route path="/home" element={<HomePage />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/user/:login" element={<Profile auth={authorized}/>} />
