@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/2000shop/static/css/main.e115a274.css",
-    "main.js": "/2000shop/static/js/main.d7b78b94.js",
+    "main.js": "/2000shop/static/js/main.85fa8cfa.js",
     "static/js/787.c20870d0.chunk.js": "/2000shop/static/js/787.c20870d0.chunk.js",
     "static/media/pinkphones2.jpg": "/2000shop/static/media/pinkphones2.ed665d7f43f187674afe.jpg",
     "static/media/samsung.jpg": "/2000shop/static/media/samsung.26fe35731c451ba75d0b.jpg",
@@ -19,11 +19,11 @@
     "static/media/lg5500.jpg": "/2000shop/static/media/lg5500.f1c4e14316132c0a691b.jpg",
     "index.html": "/2000shop/index.html",
     "main.e115a274.css.map": "/2000shop/static/css/main.e115a274.css.map",
-    "main.d7b78b94.js.map": "/2000shop/static/js/main.d7b78b94.js.map",
+    "main.85fa8cfa.js.map": "/2000shop/static/js/main.85fa8cfa.js.map",
     "787.c20870d0.chunk.js.map": "/2000shop/static/js/787.c20870d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e115a274.css",
-    "static/js/main.d7b78b94.js"
+    "static/js/main.85fa8cfa.js"
   ]
 }
